@@ -1,4 +1,5 @@
 # IDE
+.env
 .idea
 
 # Logs
@@ -67,4 +68,4 @@ node_modules/
 
 # dotenv environment variables file
 .env
-functions/.env.json
+.env
