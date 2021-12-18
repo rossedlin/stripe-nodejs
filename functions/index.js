@@ -2,6 +2,11 @@ const functions = require('firebase-functions');
 const stripe    = require('stripe')(process.env.STRIPE_SK);
 const app       = require('express')();
 
+
+app.get('/env', (req, res) => {
+  res.send(functions.config().stripe)
+})
+
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
