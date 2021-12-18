@@ -7,6 +7,7 @@ pipelines:
         name: Build
         script:
           - cd functions; npm install;
+          - firebase functions:config:set stripe.price_id="$PRICE_ID" stripe.sk="$STRIPE_SK"
         artifacts:
           - functions/**
 
@@ -14,9 +15,6 @@ pipelines:
         name: Deploy to Firebase
         deployment: production
         script:
-          - echo $PRICE_ID
-          - echo $STRIPE_SK
-#          - firebase functions:config:set stripe.price_id="$PRICE_ID" stripe.sk="$STRIPE_SK"
           - pipe: atlassian/firebase-deploy:1.3.0
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
