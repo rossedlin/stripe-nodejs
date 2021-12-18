@@ -1,4 +1,4 @@
-image: node:14.17.6
+image: rossedlin/node:14
 
 pipelines:
   default:
