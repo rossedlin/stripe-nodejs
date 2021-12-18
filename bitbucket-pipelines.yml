@@ -3,13 +3,12 @@ image: node:14.17.6
 pipelines:
   default:
 
-    - step:
-        name: Build
-        script:
-          - yarn install
-          - yarn build
-        artifacts:
-          - build/**
+#    - step:
+#        name: Build
+#        script:
+#          - yarn install
+#        artifacts:
+#          - build/**
 
     - step:
         name: Deploy to Firebase
