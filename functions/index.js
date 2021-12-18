@@ -11,8 +11,8 @@ app.post('/create-checkout-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `https://stripe-node.web.app/success.html`,
-    cancel_url: `https://stripe-node.web.app/`,
+    success_url: `https://stripe-node.edlin.app/success.html`,
+    cancel_url: `https://stripe-node.edlin.app/`,
   });
 
   res.redirect(303, session.url);
