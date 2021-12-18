@@ -12,7 +12,7 @@ app.post('/create-checkout-session', async (req, res) => {
     ],
     mode: 'payment',
     success_url: `https://stripe-node.web.app/success.html`,
-    cancel_url: `https://stripe-node.web.app/cancel.html`,
+    cancel_url: `https://stripe-node.web.app/`,
   });
 
   res.redirect(303, session.url);
