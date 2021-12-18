@@ -7,7 +7,7 @@ pipelines:
         name: Build
         script:
           - cd functions; npm install;
-          - firebase functions:config:set stripe.price_id="$PRICE_ID" stripe.sk="$STRIPE_SK"
+          - firebase functions:config:set stripe.price="$PRICE_ID" stripe.sk="$STRIPE_SK"
         artifacts:
           - functions/**
 

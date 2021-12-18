@@ -1,17 +1,12 @@
 const functions = require('firebase-functions');
-const stripe    = require('stripe')(process.env.STRIPE_SK);
+const stripe    = require('stripe')(functions.config().stripe.sk);
 const app       = require('express')();
-
-
-app.get('/env', (req, res) => {
-  res.send(functions.config().stripe)
-})
 
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        price: process.env.PRICE_ID,
+        price: functions.config().stripe.price,
         quantity: 1,
       },
     ],
