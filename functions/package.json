@@ -13,7 +13,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@sentry/node": "^8.34.0",
+    "@sentry/node": "^8.49.0",
     "@sentry/tracing": "^6.16.1",
     "express": "^4.21.2",
     "firebase-admin": "^12.1.0",
